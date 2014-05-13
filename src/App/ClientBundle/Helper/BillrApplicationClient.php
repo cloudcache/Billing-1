@@ -26,7 +26,6 @@ class BillrApplicationClient
         // New menu
 
         $menu = array(
-            'tickets'  => array('title' => 'TICKETS', 'class' => 'icon-home', 'href' => $router->generate('app_client_ticket_list')),
             'estimates' => array('title' => 'ESTIMATES', 'class' => 'icon-home', 'href' => $router->generate('app_client_estimate_list')),
             'invoices' => array('title' => 'INVOICES', 'class' => 'icon-home', 'href' => $router->generate('app_client_invoice_list')),
             'projects' => array('title' => 'PROJECTS', 'class' => 'icon-home', 'href' => $router->generate('app_client_project_list')),

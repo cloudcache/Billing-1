@@ -11,7 +11,6 @@ class DefaultController extends BaseController
     {
         $pages = array(
             AdminBusiness\ClientContact\Constants::PAGE_INVOICE => 'app_client_invoice_list',
-            AdminBusiness\ClientContact\Constants::PAGE_TICKET  => 'app_client_ticket_list',
             AdminBusiness\ClientContact\Constants::PAGE_PROJECT => 'app_client_project_list',
             AdminBusiness\ClientContact\Constants::PAGE_ORDER   => 'app_client_order_list',
             AdminBusiness\ClientContact\Constants::PAGE_PROFILE => 'app_client_profile_edit',
