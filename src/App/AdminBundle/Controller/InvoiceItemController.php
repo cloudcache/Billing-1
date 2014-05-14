@@ -48,8 +48,7 @@ class InvoiceItemController extends InlineCrudController
 
             $client = Business\GlobalUtils::getClientById($this->container, $invoice->getIdClient());
 
-            $subdomain = $this->container->getParameter('client_subdomain');
-            $token = md5($invoice->getId() . $subdomain);
+            $token = $this->get('app_admin.helper.common')->generateRandString(16);
             $url = $this->generateUrl('app_client_invoice_show', ['id' => $invoice->getId(), 'token' => $token], true);
 
             $invoice->setInvoiceAccessToken($token);

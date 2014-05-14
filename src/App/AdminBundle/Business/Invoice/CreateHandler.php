@@ -48,8 +48,6 @@ class CreateHandler extends BaseCreateHandler
         $invoice->setStatus(ClientInvoice::STATUS_UNPAID);
         $invoice->setTotalAmount(0);
         $invoice->setTotalPayment(0);
-
-        $subdomain = $this->container->getParameter('client_subdomain');
         $invoice->setInvoiceAccessToken($helperCommon->generateRandString(16));
 
         if ($proformaEnabled) {

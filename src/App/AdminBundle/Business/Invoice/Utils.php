@@ -21,15 +21,14 @@ class Utils
         $businessName = $config->getBusinessName();
         $senderEmail  = $controller->get('service_container')->getParameter('email_address');
         $senderName   = $controller->get('service_container')->getParameter('email_sender_name');
-        $billrHost    = $controller->get('service_container')->getParameter('main_host');
-        $subdomain    = $controller->get('service_container')->getParameter('client_subdomain');
+        $billrHost    = $controller->get('request')->server->get('HTTP_HOST');
         $contacts     = Business\ClientContact\Utils::getContactEmailsByType($controller, $invoice->getIdClient(), 'billing');
 
         // Put data
         $data = array(
             'client'       => $client,
             'invoice'      => $invoice,
-            'paymentUrl'   => sprintf('https://%s.%s/invoice/show/%s/%s', $subdomain, $billrHost, $invoice->getId(), $invoice->getInvoiceAccessToken()),
+            'paymentUrl'   => sprintf('https://%s/invoice/show/%s/%s', $billrHost, $invoice->getId(), $invoice->getInvoiceAccessToken()),
             'receiptUrl'   => '#',
             'total'        => $formatter->format($invoice->getTotalAmount(), 'money'),
             'issueDate'    => $formatter->format($invoice->getIssueDate(), 'date'),

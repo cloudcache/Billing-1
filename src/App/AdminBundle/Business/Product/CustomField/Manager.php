@@ -64,9 +64,12 @@ class Manager
     public function saveData($formData)
     {
         $array = array();
-        foreach($this->handlers[$this->module] as $key => $data)
+        if($this->module)
         {
-            $array[$key] = isset($formData[$key]) ? $formData[$key] : 0;
+            foreach($this->handlers[$this->module] as $key => $data)
+            {
+                $array[$key] = isset($formData[$key]) ? $formData[$key] : 0;
+            }
         }
 
         return json_encode($array);

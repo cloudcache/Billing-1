@@ -2,7 +2,7 @@
 
 namespace App\ClientBundle\Controller;
 
-use App\ClientBundle\Entity\Client,
+use App\UserBundle\Entity\User as Client,
     App\ClientBundle\Entity\Product,
     App\ClientBundle\Entity\ProductOrder,
     App\ClientBundle\Entity\ClientProduct,
@@ -202,7 +202,6 @@ class WebController extends BaseController
         $user->setPlainPassword($user->getPassword());
         $user->setStatus(1);
         $user->setEnabled(1);
-        $user->setAddedDate(new \DateTime);
 
         // Persist entity (database INSERT)
         $this->getDoctrine()->getManager()->persist($user);

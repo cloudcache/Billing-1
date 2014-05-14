@@ -37,7 +37,7 @@ class WebClientType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'App\ClientBundle\Entity\Client',
+            'data_class' => 'App\UserBundle\Entity\User',
             'csrf_protection' => false
         ));
     }

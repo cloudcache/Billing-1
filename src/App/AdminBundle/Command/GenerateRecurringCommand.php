@@ -32,7 +32,6 @@ class GenerateRecurringCommand extends ContainerAwareCommand
         $helperCommon = $this->getContainer()->get('app_admin.helper.common');
         $em           = $this->getContainer()->get('doctrine')->getEntityManager();
         $today        = new \DateTime();
-        $subdomain    = $this->getContainer()->getParameter('client_subdomain');
         $config       = $this->getContainer()->get('app_admin.helper.common')->getConfig();
 
         /* Generate Recurring Invoices */

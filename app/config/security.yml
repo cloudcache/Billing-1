@@ -39,7 +39,6 @@ security:
     access_control:
         - { path: ^/api, roles: ROLE_ADMIN }
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/return/paypal$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/invoice/show, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/invoice/pay, roles: IS_AUTHENTICATED_ANONYMOUSLY }

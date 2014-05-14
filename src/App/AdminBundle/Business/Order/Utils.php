@@ -193,6 +193,5 @@ class Utils
         $doctrine->getManager()->persist($clientEmail);
         $doctrine->getManager()->flush();
     }
-
 }
 
