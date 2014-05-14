@@ -3,7 +3,7 @@ Loading Deck Billing
 
 This is the Loading Deck billing application that was until early May 2014, offered as SaaS. We have since decided to refocus our company on consultancy and offer this as a free product under the Apache licence. Please familiarise yourself with the Apache licence before downloading this software.
 
-This software is a large project and has involved a number of developers to date. Most notably, it was managed by [James Hadley](http://www.sysadmin.co.uk/) under [Loading Deck Limited](http://www.loadingdeck.com). If you like the software, please consider hiring Loading Deck as your web consultants.
+This software is a large project and has involved a number of developers to date. Most notably, it was managed by [James Hadley](http://www.sysadmin.co.uk/) under [Loading Deck Limited](http://www.loadingdeck.com). If you like the software, please consider hiring Loading Deck as your web consultants, or [make a small donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=F7PX6QH7S7TTJ) to my coffee fund.
 
 Key features of this software include module support (but unfortunately no modules) for web hosting billing, invoicing, estimates, project management, inventory management, bulk data import/export, recurring billing, integration with Paypal, Stripe and GoCardless, and great aesthetics.
 
