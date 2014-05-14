@@ -18,14 +18,8 @@ class Constants
         );
     }
 
-    const PRODUCT_TYPE_CPANEL  = 1;
-    const PRODUCT_TYPE_SOLUSVM = 2;
-
     public static function getProductTypes()
     {
-        return array(
-            self::PRODUCT_TYPE_CPANEL  => 'cpanelExtended',
-            self::PRODUCT_TYPE_SOLUSVM => 'solusvmExtendedCloud',
-        );
+        return array();
     }
 }

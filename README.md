@@ -21,6 +21,16 @@ Key features of this software include module support (but unfortunately no modul
 11. Change the permissions on `app/cache` and `app/logs` to 777
 12. Log in with username "admin" and password "123456" at URL "/login"
 
+### Upgrading
+1. Backup `app/config/parameters.yml` and `app/config/config.yml`
+2. Get the new files from Git
+3. Restore the backed up files
+4. Run `php composer.phar update` to get the vendor packages
+5. Backup your database
+6. Run `php app/console doctrine:schema:update --force` to make any necessary changes to the DB schema. Check the new structure and restore your backup if it's done something wrong.
+7. Run `php app/console assets:install` to generate the static assets
+8. Change the permissions on `app/cache` and `app/logs` to 777
+
 If you need additional help, please consider our [forum](http://community.loadingdeck.com) that you can use to discuss the software with us. Paid support and development are also available by email and telephone (see above).
 
 ### Bugs and Contributions

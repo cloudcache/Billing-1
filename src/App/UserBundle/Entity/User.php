@@ -33,14 +33,6 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @var integer $number
-     *
-     * @ORM\Column(name="number", type="integer", nullable=false)
-     * @Assert\NotBlank()
-     */
-    protected $number;
-
-    /**
      * @var \DateTime $created
      *
      * @Gedmo\Timestampable(on="create")
@@ -442,29 +434,6 @@ class User extends BaseUser
     public function getIdCountry()
     {
         return $this->idCountry;
-    }
-
-    /**
-     * Set number
-     *
-     * @param integer $number
-     * @return $this
-     */
-    public function setNumber($number)
-    {
-        $this->number = $number;
-
-        return $this;
-    }
-
-    /**
-     * Get number
-     *
-     * @return integer
-     */
-    public function getNumber()
-    {
-        return $this->number;
     }
 
     /**

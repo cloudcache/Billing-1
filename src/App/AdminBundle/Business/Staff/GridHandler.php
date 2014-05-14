@@ -13,6 +13,8 @@ class GridHandler extends BaseGridHandler
     {
         $query->select($baseObject)
             ->from('AppUserBundle:User', $baseObject)
+            ->andWhere($baseObject.'.roles = :admin')
+            ->setParameter('admin', 'a:1:{i:0;s:16:"ROLE_SUPER_ADMIN";}')
         ;
 
         // Build filter here - Consult arrayToSQL($filter, false)
@@ -26,7 +28,6 @@ class GridHandler extends BaseGridHandler
         $r = array();
 
         $r['id']        = $item['id'];
-        $r['number']    = $item['number'];
         $r['firstname'] = $item['firstname'];
         $r['lastname']  = $item['lastname'];
         $r['email']     = $item['email'];

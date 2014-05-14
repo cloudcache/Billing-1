@@ -8,7 +8,7 @@ use App\ClientBundle\Entity\ClientInvoice;
 
 class PaymentManager
 {
-    protected $standardGateways = ['Paypal', 'GoCardless', 'Stripe'];
+    protected $standardGateways = ['Paypal', 'Gocardless', 'Stripe'];
     
     /** @var \AppKernel */
     protected $kernel;

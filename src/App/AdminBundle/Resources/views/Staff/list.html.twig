@@ -18,7 +18,7 @@
         {% endblock %}
 
         {% block gridColumns %}
-            { field:"id", title:"{{ 'ID' | trans }}", width: 120, template: '<a href="{{ grid.editUrl }}?id=#=id#">#=number#</a>' },
+            { field:"id", title:"{{ 'ID' | trans }}", width: 120, template: '<a href="{{ grid.editUrl }}?id=#=id#">#=id#</a>' },
             { field:"firstname", title:"{{ 'FIRST_NAME' | trans }}" },
             { field:"lastname", title:"{{ 'LAST_NAME' | trans }}"},
             { field:"hourly", title:"{{ 'HOURLY_RATE' | trans }}", hidden: true, editor: currencyEditor},

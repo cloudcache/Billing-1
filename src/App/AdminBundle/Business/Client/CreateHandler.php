@@ -3,7 +3,7 @@ namespace App\AdminBundle\Business\Client;
 
 use App\AdminBundle\Business\Base\BaseCreateHandler;
 use App\ClientBundle\Entity;
-use App\ClientBundle\Entity\Client;
+use App\UserBundle\Entity\User as Client;
 use Symfony\Component\Form\FormBuilder;
 use Symfony\Component\HttpFoundation\Response;
 use FOS\UserBundle\Util\Canonicalizer as Canonicalizer;
@@ -131,25 +131,8 @@ class CreateHandler extends BaseCreateHandler
         $this->entityManager->flush();
         $model         = $this->getForm()->getData();
         $client        = new Client();
-        $canonicalizer = new Canonicalizer();
 
         $this->container->get('app_admin.helper.common')->copyModelToEntity($model, $client);
-
-        // Set additional fields
-        $client->setAddedDate(new \DateTime());
-
-        // Set canonical fields
-        $client->setUsername($client->getEmail());
-        $client->setUsernameCanonical($canonicalizer->canonicalize($client->getUsername()));
-        $client->setEmailCanonical($canonicalizer->canonicalize($client->getEmail()));
-
-        // Set password
-        $salt = base_convert(sha1(uniqid(mt_rand(), true)), 16, 36);
-        $client->setSalt($salt);
-        $encoder_service = $this->container->get('security.encoder_factory');
-        $encoder = $encoder_service->getEncoder($client);
-        $encoded_pass = $encoder->encodePassword($model->plainPassword, $salt);
-        if(!empty($model->plainPassword)) $client->setPassword($encoded_pass);
 
         $this->entityManager->persist($client);
         $this->entityManager->flush();
