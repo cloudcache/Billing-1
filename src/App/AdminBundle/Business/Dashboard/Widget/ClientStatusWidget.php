@@ -33,7 +33,7 @@ class ClientStatusWidget extends AbstractWidget {
             ->groupBy('p.status');
         if (self::ALL_TIME_YEAR != $year) {
             $query
-                ->andWhere('YEAR(p.addedDate) = :year')
+                ->andWhere('YEAR(p.createdAt) = :year')
                 ->setParameter('year', $year);
         }
         $result = $query->getQuery()->getResult();
